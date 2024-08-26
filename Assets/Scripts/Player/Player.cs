@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Player : BaseCharacter
 {
-    protected override void Attack(BaseCharacter target, float damage)
+    private void Update()
     {
-        //target.Stat.health -= damage;
+        // FOR DEBUGING
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            TakenDmg(10f);
+        }
     }
 }

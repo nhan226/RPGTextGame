@@ -9,44 +9,36 @@ public enum ECharacterType
     Ranger
 }
 
-public struct FStat
-{
-    public float health;
-    public float damage;
-
-    public FStat(float health, float damage)
-    {
-        this.health = health;
-        this.damage = damage;
-    }
-}
-
 public class BaseCharacter : MonoBehaviour
 {
     [SerializeField]
     private ECharacterType characterType;
 
-    private FStat stat;
-    public FStat Stat { get; set; }
+    [Header("Stat")]
+    protected float health;
+    protected float damage;
 
     private void Start()
     {
         switch (characterType)
         {
             case ECharacterType.Warrior:
-                stat = new FStat(50f, 20f);        
+                health = 50f;
+                damage = 30f;
                 break;
             case ECharacterType.Magical:
-                stat = new FStat(30f, 10f);        
+                health = 30f;
+                damage = 10f;
                 break;
             case ECharacterType.Ranger:
-                stat = new FStat(20f, 50f);        
+                health = 20f;
+                damage = 50f;
                 break;
         }
-        Stat = stat;
     }
 
-    protected virtual void Attack(BaseCharacter target, float damage)
+    protected virtual void TakenDmg(float damage)
     {
+        health -= damage;
     }
 }

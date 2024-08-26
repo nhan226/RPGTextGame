@@ -352,6 +352,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Unity/Unity_Editor/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Unity/Unity_Editor/2022.3.26f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/Manager/Singleton.cs"
+"Assets/Scripts/Manager/TurnBaseManager.cs"
 "Assets/Scripts/Player/BaseCharacter.cs"
 "Assets/Scripts/Player/Enemy.cs"
 "Assets/Scripts/Player/Player.cs"
