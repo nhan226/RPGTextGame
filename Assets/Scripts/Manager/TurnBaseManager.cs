@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnBaseManager : MonoBehaviour
+public enum Turn
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    PlayerTurn,
+    EnemyTurn
+}
 
-    // Update is called once per frame
-    void Update()
+public class TurnBaseManager : Singleton<TurnBaseManager>
+{
+    private Turn currentTurn = Turn.PlayerTurn;
+    private Player player;
+    private Enemy enemy;
+
+    public Turn CurrentTurn { get; set; }
+    public Player Player { get; set; }
+    public Enemy Enemy { get; set; }
+
+    private void Start()
     {
-        
+        CurrentTurn = currentTurn;
+        Player = player;
+        Enemy = enemy;
     }
 }

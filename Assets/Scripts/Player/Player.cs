@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class Player : BaseCharacter
 {
-    private void Update()
+    public override void NormalAttack()
     {
-        // FOR DEBUGING
-        if (Input.GetKeyDown(KeyCode.N))
+        Attack(10);
+    }
+
+    public override void Skill01Attack()
+    {
+        Attack(20);
+    }
+
+    public override void Skill02Attack()
+    {
+        Attack(30);
+    }
+
+    public override void Skill03Attack()
+    {
+        Attack(40);
+    }
+
+    private void Attack(float dmg)
+    {
+        if (TurnBaseManager.Instance.CurrentTurn == Turn.PlayerTurn)
         {
-            TakenDmg(10f);
+            TurnBaseManager.Instance.Enemy.TakenDmg(dmg);
+
+            TurnBaseManager.Instance.CurrentTurn = Turn.EnemyTurn;
         }
     }
 }

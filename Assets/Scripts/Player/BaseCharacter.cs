@@ -37,8 +37,28 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
-    protected virtual void TakenDmg(float damage)
+    public virtual void TakenDmg(float damage)
     {
         health -= damage;
+    }
+
+    protected virtual void Die()
+    {
+    }
+
+    public virtual void NormalAttack()
+    {
+    }
+
+    public virtual void Skill01Attack()
+    {
+    }
+
+    public virtual void Skill02Attack()
+    {
+    }
+
+    public virtual void Skill03Attack()
+    {
     }
 }
